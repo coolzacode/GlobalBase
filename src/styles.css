@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  line-height: 1.5;
+}
+
+/* Custom Select Styles */
+.search-box {
+  width: 70%;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 9;
+  /* border: none; */
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+button {
+  flex: 1;
+}
+
+.options {
+  list-style: none;
+  overflow-y: auto;
+}
+
+.options li {
+  cursor: pointer;
+}
+
+.hidden-element {
+  display: none;
+}

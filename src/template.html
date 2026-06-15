@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlobalBase</title>
+  </head>
+  <body>
+    <main>
+      <div class="result">
+        <h1 id="welcome-message">Welcome to GlobalBase</h1>
+        <div id="dashboard-display"></div>
+      </div>
+
+      <div class="select-box">
+        <form id="search-form" class="search-box">
+          <input
+            type="text"
+            id="selected-country"
+            placeholder="Seach country..."
+            autocomplete="off"
+          />
+          <button type="submit" id="submit-btn">Seach</button>
+        </form>
+        <ul id="countries-list" class="options hidden-element"></ul>
+      </div>
+    </main>
+  </body>
+</html>
