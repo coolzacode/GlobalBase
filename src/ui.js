@@ -14,12 +14,12 @@ export function setupDropdownOptions(countriesArray) {
 }
 
 export function filterDropdownOptions() {
-  if (countryList.classList.contains('hidden-element')) {
-    countryList.classList.remove('hidden-element');
-  }
   if (searchBox.value === '') {
     countryList.classList.add('hidden-element');
+    return;
   }
+
+  countryList.classList.remove('hidden-element');
 
   const searchTerm = searchBox.value.toLowerCase();
   const options = countryList.querySelectorAll('li');
@@ -38,10 +38,6 @@ export function handleDropdownSelection(event) {
   if (event.target.nodeName === 'LI') {
     searchBox.value = event.target.textContent;
 
-    const options = countryList.querySelectorAll('li');
-    for (const opt of options) {
-      opt.classList.add('hidden-element');
-    }
     countryList.classList.add('hidden-element');
   }
 }
