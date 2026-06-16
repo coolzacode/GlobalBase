@@ -18,27 +18,19 @@ export async function fetchCountryData(countryName) {
   }
 }
 
-export function extractCountryData(country) {
-  const result = country.data.objects[0];
-  const officialName = result.names.official;
-  const government = result.government_type;
-  const capital = result.capitals[0].name;
-  const population = result.population;
-  const borders = result.borders;
-  const currencyName = result.currencies[0].name;
-  const currencySymbol = result.currencies[0].symbol;
-  const currencyCode = result.currencies[0].code;
-  const timeZones = result.timezones;
+export function extractCountryData(apiResponse) {
+  const result = apiResponse?.data?.objects?.[0];
+  if (!result) return null;
 
   return {
-    officialName: officialName,
-    government: government,
-    capital: capital,
-    population: population,
-    borders: borders,
-    currencyName: currencyName,
-    currencySymbol: currencySymbol,
-    currencyCode: currencyCode,
-    timeZones: timeZones,
+    officialName: result['names.official'],
+    government: result.government_type,
+    capital: result.capitals?.[0]?.name || 'N/A',
+    population: result.population,
+    borders: result.borders || [],
+    currencyName: result.currencies?.[0]?.name || 'N/A',
+    currencySymbol: result.currencies?.[0]?.symbol || '',
+    currencyCode: result.currencies?.[0]?.code || '',
+    timeZones: result.timeZones || [],
   };
 }
