@@ -13,7 +13,17 @@ const countryList = document.getElementById('countries-list');
 setupDropdownOptions(countriesData);
 
 searchBox.addEventListener('input', filterDropdownOptions);
-countryList.addEventListener('click', handleDropdownSelection);
+countryList.addEventListener('click', async (event) => {
+  const chosenCountry = handleDropdownSelection(event);
 
-const result = await fetchCountryData('Canada');
-console.log(extractCountryData(result));
+  if (chosenCountry) {
+    try {
+      console.log(`Querying API: ${chosenCountry}`);
+      const rawData = await fetchCountryData(chosenCountry);
+      const cleanData = extractCountryData(rawData);
+      console.log('Ready for rendering:', cleanData);
+    } catch (error) {
+      console.error('Failed execution cycle:', error.message);
+    }
+  }
+});

@@ -36,8 +36,10 @@ export function filterDropdownOptions() {
 
 export function handleDropdownSelection(event) {
   if (event.target.nodeName === 'LI') {
-    searchBox.value = event.target.textContent;
-
+    const selectedCountry = event.target.textContent;
+    searchBox.value = selectedCountry;
     countryList.classList.add('hidden-element');
+    return selectedCountry;
   }
+  return null;
 }
