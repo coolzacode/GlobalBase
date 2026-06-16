@@ -23,7 +23,7 @@ export function extractCountryData(apiResponse) {
   if (!result) return null;
 
   return {
-    officialName: result['names.official'],
+    officialName: result.names.official,
     government: result.government_type,
     capital: result.capitals?.[0]?.name || 'N/A',
     population: result.population,
@@ -31,6 +31,6 @@ export function extractCountryData(apiResponse) {
     currencyName: result.currencies?.[0]?.name || 'N/A',
     currencySymbol: result.currencies?.[0]?.symbol || '',
     currencyCode: result.currencies?.[0]?.code || '',
-    timeZones: result.timeZones || [],
+    timeZones: result.timezones || [],
   };
 }
