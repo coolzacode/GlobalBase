@@ -42,5 +42,6 @@ export function handleDropdownSelection(event) {
     for (const opt of options) {
       opt.classList.add('hidden-element');
     }
+    countryList.classList.add('hidden-element');
   }
 }
