@@ -1,3 +1,25 @@
+:root {
+  --bg-main: #fcfaff;
+  --bg-surface: #ffffff;
+  --text-main: #10002b;
+  --text-muted: #5a189a;
+  --accent-primary: #7b2cbf;
+  --accent-hover: #5a189a;
+  --border-color: #e0aaff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #10002b;
+    --bg-surface: #240046;
+    --text-main: #f8f9fa;
+    --text-muted: #e0aaae;
+    --accent-primary: #9d4edd;
+    --accent-hover: #c77dff;
+    --border-color: #3c096c;
+  }
+}
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -10,34 +32,44 @@ body {
   align-items: center;
   height: 100vh;
   line-height: 1.5;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+input,
+button {
+  font: inherit;
+  padding: 0.5rem;
+  font-size: 1.1rem;
 }
 
 /* Custom Select Styles */
-.search-box {
-  width: 70%;
+.select-box {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  padding: 0.5rem;
-  font-size: 1.1rem;
+  width: 70%;
+}
+
+.search-box {
+  z-index: 1000;
   display: flex;
   gap: 10px;
 }
 
-input {
+#selected-country {
   flex: 9;
-  /* border: none; */
-  padding: 0.5rem;
-  font-size: 1.1rem;
 }
 
-button {
+#submit-btn {
   flex: 1;
 }
 
 .options {
+  position: absolute;
+  bottom: 100%;
   list-style: none;
   overflow-y: auto;
 }
