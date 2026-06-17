@@ -43,3 +43,19 @@ export function handleDropdownSelection(event) {
   }
   return null;
 }
+
+export function displayData(cleanData) {
+  console.log(cleanData);
+  console.log(cleanData.officialName);
+  // const dashboard = document.getElementById('dashboard-display');
+  // dashboard.replaceChildren();
+  // const fragment = document.createDocumentFragment();
+
+  // const headerDiv = document.createElement('div');
+  // const disName = document.createElement('h1');
+  // const disGovernment = document.createElement('p');
+  // headerDiv.append(disName, disGovernment);
+
+  // disName.textContent = cleanData.officialName;
+  // disGovernment.textContent = cleanData.government;
+}

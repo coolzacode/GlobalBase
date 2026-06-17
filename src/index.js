@@ -5,6 +5,7 @@ import {
   setupDropdownOptions,
   filterDropdownOptions,
   handleDropdownSelection,
+  displayData,
 } from './ui.js';
 
 const searchBox = document.getElementById('selected-country');
@@ -18,10 +19,9 @@ countryList.addEventListener('click', async (event) => {
 
   if (chosenCountry) {
     try {
-      console.log(`Querying API: ${chosenCountry}`);
       const rawData = await fetchCountryData(chosenCountry);
       const cleanData = extractCountryData(rawData);
-      console.log('Ready for rendering:', cleanData);
+      displayData(cleanData);
     } catch (error) {
       console.error('Failed execution cycle:', error.message);
     }

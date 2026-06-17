@@ -7,22 +7,60 @@
   </head>
   <body>
     <main>
-      <div class="result">
+      <section class="result">
         <h1 id="welcome-message">Welcome to GlobalBase</h1>
-        <div id="dashboard-display"></div>
-      </div>
 
-      <div class="select-box">
+        <article id="dashboard-display" class="hidden-element">
+          <header>
+            <h2 id="country-name">Islamic Republic of Pakistan</h2>
+            <p id="government-type" class="text-muted">
+              Federal parliamentary Islamic republic
+            </p>
+          </header>
+
+          <section class="info-grid">
+            <div class="info-card">
+              <h3>Country Info</h3>
+              <dl>
+                <dt>Capital:</dt>
+                <dd id="capital-value"></dd>
+                <dt>Time Zone:</dt>
+                <dd id="timezone-value"></dd>
+              </dl>
+            </div>
+
+            <div class="info-card">
+              <h3>Currency Info</h3>
+              <dl>
+                <dt>Symbol:</dt>
+                <dd id="currency-symbol"></dd>
+                <dt>Code:</dt>
+                <dd id="currency-code"></dd>
+                <dt>Name:</dt>
+                <dd id="currency-name"></dd>
+              </dl>
+            </div>
+          </section>
+        </article>
+      </section>
+
+      <section class="select-box" aria-label="Country Search">
         <form id="search-form" class="search-box">
           <input
             type="text"
             id="selected-country"
             placeholder="Seach country..."
             autocomplete="off"
+            aria-autocomplete="list"
+            aria-controls="countries-list"
           />
         </form>
-        <ul id="countries-list" class="options hidden-element"></ul>
-      </div>
+        <ul
+          id="countries-list"
+          class="options hidden-element"
+          role="listbox"
+        ></ul>
+      </section>
     </main>
   </body>
 </html>
