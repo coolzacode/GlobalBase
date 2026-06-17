@@ -45,17 +45,13 @@ export function handleDropdownSelection(event) {
 }
 
 export function displayData(cleanData) {
-  console.log(cleanData);
-  console.log(cleanData.officialName);
-  // const dashboard = document.getElementById('dashboard-display');
-  // dashboard.replaceChildren();
-  // const fragment = document.createDocumentFragment();
-
-  // const headerDiv = document.createElement('div');
-  // const disName = document.createElement('h1');
-  // const disGovernment = document.createElement('p');
-  // headerDiv.append(disName, disGovernment);
-
-  // disName.textContent = cleanData.officialName;
-  // disGovernment.textContent = cleanData.government;
+  document.getElementById('country-name').textContent = cleanData.officialName;
+  document.getElementById('government-type').textContent = cleanData.government;
+  document.getElementById('capital-value').textContent = cleanData.capital;
+  document.getElementById('timezone-value').textContent = cleanData.timeZones;
+  document.getElementById('currency-symbol').textContent =
+    cleanData.currencySymbol;
+  document.getElementById('currency-code').textContent = cleanData.currencyCode;
+  document.getElementById('currency-name').textContent = cleanData.currencyName;
+  document.getElementById('borders-list').textContent = cleanData.borders;
 }
