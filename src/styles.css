@@ -41,7 +41,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#dahboard-display {
+#dashboard-display {
   display: flex;
   flex-direction: column;
   gap: 2rem;
