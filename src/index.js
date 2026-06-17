@@ -21,10 +21,12 @@ countryList.addEventListener('click', async (event) => {
     const loader = document.getElementById('loader');
     const dashboard = document.getElementById('dashboard-display');
     const welcome = document.getElementById('welcome-message');
+    const errorBox = document.getElementById('error-message');
 
     loader.classList.remove('hidden-element');
     dashboard.classList.add('hidden-element');
     welcome.classList.add('hidden-element');
+    errorBox.classList.add('hidden-element');
 
     try {
       const rawData = await fetchCountryData(chosenCountry);
@@ -32,6 +34,9 @@ countryList.addEventListener('click', async (event) => {
       displayData(cleanData);
     } catch (error) {
       console.error('Failed execution cycle:', error.message);
+      errorBox.classList.remove('hidden-element');
+      document.getElementById('error-text').textContent =
+        `Could not find data for ${chosenCountry}.`;
     } finally {
       loader.classList.add('hidden-element');
     }
