@@ -18,12 +18,22 @@ countryList.addEventListener('click', async (event) => {
   const chosenCountry = handleDropdownSelection(event);
 
   if (chosenCountry) {
+    const loader = document.getElementById('loader');
+    const dashboard = document.getElementById('dashboard-display');
+    const welcome = document.getElementById('welcome-message');
+
+    loader.classList.remove('hidden-element');
+    dashboard.classList.add('hidden-element');
+    welcome.classList.add('hidden-element');
+
     try {
       const rawData = await fetchCountryData(chosenCountry);
       const cleanData = extractCountryData(rawData);
       displayData(cleanData);
     } catch (error) {
       console.error('Failed execution cycle:', error.message);
+    } finally {
+      loader.classList.add('hidden-element');
     }
   }
 });

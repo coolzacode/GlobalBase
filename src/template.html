@@ -8,11 +8,16 @@
   <body>
     <main>
       <section class="result">
-        <h1 id="welcome-message" class="hidden-element">
-          Welcome to GlobalBase
-        </h1>
+        <h1 id="welcome-message">Welcome to GlobalBase</h1>
 
-        <article id="dashboard-display">
+        <div id="loader" class="loader hidden-element">
+          <div class="spinner"></div>
+        </div>
+
+        <article
+          id="dashboard-display"
+          class="dashboard-display hidden-element"
+        >
           <header>
             <h2 id="country-name"></h2>
             <p id="government-type"></p>

@@ -45,13 +45,32 @@ export function handleDropdownSelection(event) {
 }
 
 export function displayData(cleanData) {
+  document.getElementById('welcome-message').classList.add('hidden-element');
+  document
+    .getElementById('dashboard-display')
+    .classList.remove('hidden-element');
+
   document.getElementById('country-name').textContent = cleanData.officialName;
   document.getElementById('government-type').textContent = cleanData.government;
   document.getElementById('capital-value').textContent = cleanData.capital;
-  document.getElementById('timezone-value').textContent = cleanData.timeZones;
+  document.getElementById('timezone-value').textContent =
+    cleanData.timeZones.join(', ');
   document.getElementById('currency-symbol').textContent =
     cleanData.currencySymbol;
   document.getElementById('currency-code').textContent = cleanData.currencyCode;
   document.getElementById('currency-name').textContent = cleanData.currencyName;
-  document.getElementById('borders-list').textContent = cleanData.borders;
+
+  const bordersList = document.getElementById('borders-list');
+  bordersList.replaceChildren();
+
+  if (cleanData.borders.length === 0) {
+    bordersList.textContent = 'None';
+  } else {
+    cleanData.borders.forEach((borderCode) => {
+      const span = document.createElement('span');
+      span.classList.add('border-tag');
+      span.textContent = borderCode;
+      bordersList.appendChild(span);
+    });
+  }
 }
