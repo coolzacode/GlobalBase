@@ -41,6 +41,80 @@ body {
   transition: background-color 0.3s ease;
 }
 
+#dahboard-display {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#country-name {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  color: var(--accent-primary);
+}
+
+#government-type {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.info-card {
+  background-color: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+dl {
+  margin-top: 1rem;
+}
+
+dt {
+  font-weight: bold;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+dd {
+  margin-left: 0;
+  font-size: 1.1rem;
+}
+
+#borders-section {
+  width: 100%;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.borders-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.border-tag {
+  background-color: var(--border-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
 input {
   width: 100%;
   font: inherit;

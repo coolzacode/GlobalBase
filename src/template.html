@@ -8,14 +8,14 @@
   <body>
     <main>
       <section class="result">
-        <h1 id="welcome-message">Welcome to GlobalBase</h1>
+        <h1 id="welcome-message" class="hidden-element">
+          Welcome to GlobalBase
+        </h1>
 
-        <article id="dashboard-display" class="hidden-element">
+        <article id="dashboard-display">
           <header>
-            <h2 id="country-name">Islamic Republic of Pakistan</h2>
-            <p id="government-type" class="text-muted">
-              Federal parliamentary Islamic republic
-            </p>
+            <h2 id="country-name"></h2>
+            <p id="government-type"></p>
           </header>
 
           <section class="info-grid">
@@ -24,7 +24,7 @@
               <dl>
                 <dt>Capital:</dt>
                 <dd id="capital-value"></dd>
-                <dt>Time Zone:</dt>
+                <dt>Time Zones:</dt>
                 <dd id="timezone-value"></dd>
               </dl>
             </div>
@@ -40,6 +40,11 @@
                 <dd id="currency-name"></dd>
               </dl>
             </div>
+          </section>
+
+          <section id="borders-section">
+            <h3>Bordering Countries</h3>
+            <div id="borders-list" class="borders-list"></div>
           </section>
         </article>
       </section>
