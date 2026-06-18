@@ -4,9 +4,9 @@
 
 ## Visual Demonstration
 
-| Light Mode                                            | Dark Mode                                           |
-| :---------------------------------------------------- | :-------------------------------------------------- |
-| ![Dashboard Light Mode](./assets/dashboard-light.jpg) | ![Dashboard Dark Mode](./assets/dashboard-dark.jpg) |
+| Light Mode                                      | Dark Mode                                     |
+| :---------------------------------------------- | :-------------------------------------------- |
+| ![Dashboard Light Mode](./assets/lightmode.jpg) | ![Dashboard Dark Mode](./assets/darkmode.jpg) |
 
 > **Note:** Automatically detects the system's theme settings and switches between light and dark modes.
 
